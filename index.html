@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Haybat | Kikboksing, MMA va CrossFit</title>
-  <meta name="description" content="Tajribali murabbiylar bilan kikboksing, MMA va CrossFit bilan shug'ullaning. Boshlovchilar uchun ham mos. Bugunoq Haybat'ga qo'shiling.">
+  <title>Haybat Club | Kikboksing, MMA va CrossFit</title>
+  <meta name="description" content="Tajribali murabbiylar bilan kikboksing, MMA va CrossFit bilan shug'ullaning. Boshlovchilar uchun ham mos. Bugunoq Haybat Club'ga qo'shiling.">
 
   <!-- Fonts: Barlow Condensed (headlines) + Barlow (body). Fallbacks defined in CSS. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Qo'shimcha dizayn: faqat yangi bo'limlar uchun (style.css ga tegilmagan) */
+    .price { font-size: 3rem; }
+    .price span { white-space: normal; }
+    .schedule-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    .schedule { width: 100%; min-width: 560px; border-collapse: collapse; background: var(--surface); }
+    .schedule th, .schedule td { padding: 0.9rem 1.1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .schedule thead th { font: 700 1.25rem var(--font-display); color: var(--accent); background: var(--bg); }
+    .schedule tbody th { font-weight: 600; color: var(--text); }
+    .schedule td { color: var(--muted); }
+    .schedule tr:last-child th, .schedule tr:last-child td { border-bottom: 0; }
+    .schedule .off { text-align: center; font-style: italic; }
+    .map { display: block; width: 100%; height: 280px; border: 0; border-radius: var(--radius); margin-top: 1.5rem; }
+    .map-link { display: inline-block; margin-top: 0.6rem; color: var(--accent); font-weight: 600; }
+    .form-note { margin: 0.75rem 0 0; font-size: 0.95rem; color: var(--accent); }
+    .float-actions { position: fixed; right: 14px; bottom: 14px; z-index: 90; display: flex; flex-direction: column; gap: 10px; }
+    .float-btn { display: flex; align-items: center; gap: 8px; padding: 0.8rem 1.1rem; border-radius: 999px; font-weight: 600; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45); transition: transform var(--ease); }
+    .float-btn:hover { transform: translateY(-2px); }
+    .float-call { background: var(--accent); color: var(--on-accent); }
+    .float-tg { background: #229ed9; color: #fff; }
+  </style>
 </head>
 <body>
 
@@ -20,7 +41,7 @@
   <!-- ============ HEADER / NAVIGATION ============ -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#home" class="logo" aria-label="Haybat bosh sahifa">Haybat<span>.</span></a>
+      <a href="#home" class="logo" aria-label="Haybat Club bosh sahifa">Haybat Club<span>.</span></a>
 
       <!-- CSS-only mobile menu: the checkbox toggles the nav, no JavaScript needed -->
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menyuni ochish va yopish">
@@ -30,6 +51,7 @@
         <ul>
           <li><a href="#about">Biz haqimizda</a></li>
           <li><a href="#programs">Dasturlar</a></li>
+          <li><a href="#schedule">Jadval</a></li>
           <li><a href="#pricing">Narxlar</a></li>
           <li><a href="#trainers">Murabbiylar</a></li>
           <li><a href="#contact">Aloqa</a></li>
@@ -68,7 +90,7 @@
       <div class="container about-grid">
         <div class="about-text">
           <h2>Jangchilar va sportchilar uchun yaratilgan zal</h2>
-          <p>Haybat'ni har bir a'zo o'z maqsadiga erishishi uchun murabbiy va mashq sheriklariga ega bo'lsin deb ochdik, bu birinchi mashg'ulot bo'ladimi yoki birinchi jang.</p>
+          <p>Haybat Club'ni har bir a'zo o'z maqsadiga erishishi uchun murabbiy va mashq sheriklariga ega bo'lsin deb ochdik, bu birinchi mashg'ulot bo'ladimi yoki birinchi jang.</p>
           <p>Ortiqcha shov-shuv yo'q. Faqat to'liq jang maydoni, CrossFit zonasi va sizni ismingiz bilan taniydigan murabbiylar. Boshlovchilar va musobaqachilar yonma-yon mashq qiladi.</p>
         </div>
 
@@ -121,8 +143,34 @@
       </div>
     </section>
 
+    <!-- ============ SCHEDULE ============ -->
+    <section id="schedule" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Dars jadvali</h2>
+          <p>Qulay vaqtni tanlang va keling. Birinchi mashg'ulot bepul.</p>
+        </header>
+        <div class="schedule-wrap">
+          <table class="schedule" aria-label="Haftalik dars jadvali">
+            <thead>
+              <tr><th scope="col">Kun</th><th scope="col">Kikboksing</th><th scope="col">MMA</th><th scope="col">CrossFit</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Dushanba</th><td>19:00</td><td>–</td><td>07:00, 18:00</td></tr>
+              <tr><th scope="row">Seshanba</th><td>–</td><td>20:00</td><td>07:00, 18:00</td></tr>
+              <tr><th scope="row">Chorshanba</th><td>19:00</td><td>–</td><td>07:00, 18:00</td></tr>
+              <tr><th scope="row">Payshanba</th><td>–</td><td>20:00</td><td>07:00, 18:00</td></tr>
+              <tr><th scope="row">Juma</th><td>19:00</td><td>–</td><td>07:00, 18:00</td></tr>
+              <tr><th scope="row">Shanba</th><td>11:00</td><td>12:30</td><td>10:00</td></tr>
+              <tr><th scope="row">Yakshanba</th><td class="off" colspan="3">Dam olish kuni</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ PRICING ============ -->
-    <section id="pricing" class="section">
+    <section id="pricing" class="section section-alt">
       <div class="container">
         <header class="section-head">
           <h2>A'zolik tarifini tanlang</h2>
@@ -134,7 +182,7 @@
           <!-- Basic -->
           <article class="card plan">
             <h3>Basic</h3>
-            <p class="price">$29<span>/oyiga</span></p>
+            <p class="price">350 000<span> so'm/oyiga</span></p>
             <ul class="plan-features">
               <li>Ochiq zal va CrossFit zonasiga kirish</li>
               <li>Kiyinish xonasi va dush</li>
@@ -147,7 +195,7 @@
           <article class="card plan plan-popular">
             <p class="badge">Eng ommabop</p>
             <h3>Pro</h3>
-            <p class="price">$49<span>/oyiga</span></p>
+            <p class="price">600 000<span> so'm/oyiga</span></p>
             <ul class="plan-features">
               <li>Basic'dagi hamma narsa</li>
               <li>Kikboksing, MMA va CrossFit bo'yicha cheksiz mashg'ulotlar</li>
@@ -160,7 +208,7 @@
           <!-- VIP -->
           <article class="card plan">
             <h3>VIP</h3>
-            <p class="price">$89<span>/oyiga</span></p>
+            <p class="price">1 100 000<span> so'm/oyiga</span></p>
             <ul class="plan-features">
               <li>Pro'dagi hamma narsa</li>
               <li>4 ta shaxsiy mashg'ulot</li>
@@ -175,7 +223,7 @@
     </section>
 
     <!-- ============ TRAINERS ============ -->
-    <section id="trainers" class="section section-alt">
+    <section id="trainers" class="section">
       <div class="container">
         <header class="section-head">
           <h2>Murabbiylar bilan tanishing</h2>
@@ -213,7 +261,7 @@
     </section>
 
     <!-- ============ CONTACT & LOCATION ============ -->
-    <section id="contact" class="section">
+    <section id="contact" class="section section-alt">
       <div class="container contact-grid">
 
         <div class="contact-info">
@@ -231,6 +279,9 @@
             <div><dt>Yakshanba</dt><dd>8:00 – 20:00</dd></div>
           </dl>
           <p class="note">Pro va VIP a'zolari 24/7 kirish huquqiga ega.</p>
+
+          <iframe class="map" title="Haybat Club zali xaritada" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Gulzor+ko%27chasi+89,+Denov,+Surxondaryo,+Uzbekistan&output=embed"></iframe>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Gulzor+ko%27chasi+89,+Denov,+Surxondaryo,+Uzbekistan" target="_blank" rel="noopener">Google Xaritada ochish</a>
         </div>
 
         <!-- Replace action with your form backend (Formspree, Netlify Forms, etc.) -->
@@ -240,8 +291,8 @@
             <input type="text" id="name" name="name" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
+            <label for="phone">Telefon raqamingiz</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+998 __ ___ __ __" required>
           </div>
           <div class="field">
             <label for="plan">Qiziqqan tarifingiz</label>
@@ -256,6 +307,7 @@
             <textarea id="message" name="message" rows="4"></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-block">Bepul haftamni band qilish</button>
+          <p class="form-note" role="status"></p>
         </form>
 
       </div>
@@ -266,7 +318,7 @@
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a href="#home" class="logo">Haybat<span>.</span></a>
+      <a href="#home" class="logo">Haybat Club<span>.</span></a>
 
       <ul class="footer-links">
         <li><a href="#about">Biz haqimizda</a></li>
@@ -281,12 +333,39 @@
         <li><a href="#" aria-label="Instagram">IG</a></li>
         <li><a href="#" aria-label="Facebook">FB</a></li>
         <li><a href="#" aria-label="YouTube">YT</a></li>
-        <li><a href="#" aria-label="Telegram">TG</a></li>
+        <li><a href="#" aria-label="Telegram" data-tg>TG</a></li>
       </ul>
 
-      <p class="copyright">&copy; 2026 Haybat. Barcha huquqlar himoyalangan.</p>
+      <p class="copyright">&copy; 2026 Haybat Club. Barcha huquqlar himoyalangan.</p>
     </div>
   </footer>
+
+  <!-- Suzuvchi tugmalar: qo'ng'iroq va Telegram -->
+  <div class="float-actions">
+    <a class="float-btn float-call" href="tel:+998938696004">📞 Qo'ng'iroq qilish</a>
+    <a class="float-btn float-tg" href="#" data-tg>✈ Telegramda yozish</a>
+  </div>
+
+  <script>
+    // Telegram foydalanuvchi nomini (@ belgisiz) shu yerga yozing. Masalan: "haybat_gym"
+    var TG_USER = "YOUR_USERNAME";
+    var tgUrl = "https://t.me/" + TG_USER;
+
+    document.querySelectorAll("[data-tg]").forEach(function (a) {
+      a.href = tgUrl; a.target = "_blank"; a.rel = "noopener";
+    });
+
+    // Forma: ma'lumotlar Telegramda tayyor xabar bo'lib ochiladi
+    document.querySelector(".contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = function (id) { return document.getElementById(id).value.trim(); };
+      var text = "Salom! Haybat Club zaliga yozilmoqchiman.\nIsm: " + v("name") +
+                 "\nTelefon: " + v("phone") + "\nTarif: " + v("plan") +
+                 (v("message") ? "\nXabar: " + v("message") : "");
+      window.open(tgUrl + "?text=" + encodeURIComponent(text), "_blank");
+      document.querySelector(".form-note").textContent = "Telegram ochildi. Xabarni yuborish tugmasini bosing.";
+    });
+  </script>
 
 </body>
 </html>
