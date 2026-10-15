@@ -96,7 +96,9 @@
     .faq p { margin: 0.75rem 0 0; }
 
     /* Til tugmasi */
-    .lang-btn { margin-left: auto; margin-right: 0.75rem; background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.4rem 0.75rem; font: 700 0.9rem var(--font-body); cursor: pointer; transition: border-color var(--ease), color var(--ease); }
+    .topbar { background: var(--bg-alt); border-bottom: 1px solid var(--border); }
+    .topbar .container { display: flex; justify-content: flex-end; padding: 0.3rem 0; }
+    .lang-btn { background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 0.25rem 0.8rem; font: 700 0.85rem var(--font-body); letter-spacing: 0.04em; cursor: pointer; transition: border-color var(--ease), color var(--ease); }
     .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 </head>
@@ -104,12 +106,17 @@
 
   <a class="skip-link" href="#main">Asosiy qismga o'tish</a>
 
+  <!-- Til tugmasi: o'ng yuqori burchak, menyu tepasida -->
+  <div class="topbar">
+    <div class="container">
+      <button type="button" id="lang-btn" class="lang-btn" aria-label="Til / Язык">🌐 UZB</button>
+    </div>
+  </div>
+
   <!-- ============ HEADER / NAVIGATION ============ -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="#home" class="logo" aria-label="Haybat Club bosh sahifa">Haybat Club<span>.</span></a>
-
-      <button type="button" id="lang-btn" class="lang-btn" aria-label="Til / Язык">RU</button>
 
       <!-- CSS-only mobile menu: the checkbox toggles the nav, no JavaScript needed -->
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menyuni ochish va yopish">
@@ -693,7 +700,7 @@
           el.setAttribute(a, l === "ru" ? RU[el[k]] : el[k]);
         });
       });
-      document.getElementById("lang-btn").textContent = l === "ru" ? "UZ" : "RU";
+      document.getElementById("lang-btn").textContent = "🌐 " + (l === "ru" ? "RUS" : "UZB");
       document.querySelector(".form-note").textContent = "";
       if (document.querySelector(".calc-big") || document.querySelector(".calc-warn")) runCalc();
     }
